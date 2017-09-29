@@ -45,6 +45,7 @@ function startCar() {
 }
 
 const $car = renderCar()
+let intervalID
 $car['direction'] = 'south'
 $car['speed'] = 10
 $car['location'] = [0, 0]
@@ -60,6 +61,9 @@ document.body.appendChild($boundary)
 
 document.body.onkeyup = (event) => {
   if (event.code === 'Space') {
-    setInterval(startCar, 1000)
+    intervalID = setInterval(startCar, 1000)
+  }
+  else if (event.code === 'Digit0') {
+    clearInterval(intervalID)
   }
 }
