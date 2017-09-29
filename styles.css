@@ -17,3 +17,19 @@ body {
   width: 50px;
   height: 100px;
 }
+
+.east {
+  transform: rotate(-0.25turn);
+}
+
+.west {
+  transform: rotate(0.25turn);
+}
+
+.north {
+  transform: rotate(0.5turn);
+}
+
+.south {
+  transform: rotate(0turn);
+}

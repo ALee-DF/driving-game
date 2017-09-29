@@ -1,6 +1,7 @@
 function renderCar() {
   const $img = document.createElement('img')
   $img.setAttribute('id', 'car')
+  $img.setAttribute('class', 'south')
   $img.setAttribute('src', 'pictures/red-car.png')
   $img.setAttribute('alt', 'Red Car')
   return $img
@@ -27,10 +28,10 @@ const carPrototype = {
       this.location[1] = this.location[1] + this.speed
     }
     else if (this.direction === 'east') {
-      this.location[0] = this.location[0] - this.speed
+      this.location[0] = this.location[0] + this.speed
     }
     else if (this.direction === 'west') {
-      this.location[0] = this.location[0] + this.speed
+      this.location[0] = this.location[0] - this.speed
     }
   }
 }
@@ -68,14 +69,18 @@ document.body.onkeyup = (event) => {
   }
   else if (event.code === 'ArrowUp') {
     $car.turn('north')
+    $car.setAttribute('class', 'north')
   }
   else if (event.code === 'ArrowDown') {
     $car.turn('south')
+    $car.setAttribute('class', 'south')
   }
   else if (event.code === 'ArrowLeft') {
-    $car.turn('east')
+    $car.turn('west')
+    $car.setAttribute('class', 'west')
   }
   else if (event.code === 'ArrowRight') {
-    $car.turn('west')
+    $car.turn('east')
+    $car.setAttribute('class', 'east')
   }
 }
