@@ -1,6 +1,7 @@
 function renderCar() {
   const $img = document.createElement('img')
   $img.setAttribute('id', 'car')
+  $img.setAttribute('class', 'south')
   $img.setAttribute('src', 'pictures/red-car.png')
   $img.setAttribute('alt', 'Red Car')
   return $img
@@ -65,5 +66,21 @@ document.body.onkeyup = (event) => {
   }
   else if (event.code === 'Digit0') {
     clearInterval(intervalID)
+  }
+  else if (event.code === 'ArrowUp') {
+    $car.turn('north')
+    $car.setAttribute('class', 'north')
+  }
+  else if (event.code === 'ArrowDown') {
+    $car.turn('south')
+    $car.setAttribute('class', 'south')
+  }
+  else if (event.code === 'ArrowLeft') {
+    $car.turn('west')
+    $car.setAttribute('class', 'west')
+  }
+  else if (event.code === 'ArrowRight') {
+    $car.turn('east')
+    $car.setAttribute('class', 'east')
   }
 }
