@@ -60,11 +60,18 @@ const $boundary = renderBoundary()
 $boundary.appendChild($car)
 document.body.appendChild($boundary)
 
-document.body.onkeydown = (event) => {
+document.body.onkeydown = event => {
   if (event.code === 'Space') {
     intervalID.push(setInterval(startCar, 1000))
   }
-  else if (event.code === 'Digit0') {
+  else if (event.code === 'KeyZ') {
+    clearInterval(intervalID[intervalID.length - 1])
+    intervalID.pop()
+  }
+}
+
+document.body.onkeyup = event => {
+  if (event.code === 'Digit0') {
     intervalID.forEach(id => clearInterval(id))
     intervalID = []
   }
