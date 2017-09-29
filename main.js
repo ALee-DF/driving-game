@@ -13,6 +13,16 @@ function renderBoundary() {
 }
 
 const $car = renderCar()
+Object.assign($car.style, {
+  left: '0px',
+  top: '0px'
+})
 const $boundary = renderBoundary()
 $boundary.appendChild($car)
 document.body.appendChild($boundary)
+
+document.body.onkeyup = (event) => {
+  if (event.code === 'Space') {
+    console.log('test')
+  }
+}
