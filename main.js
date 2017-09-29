@@ -45,7 +45,7 @@ function startCar() {
 }
 
 const $car = renderCar()
-var intervalID
+let intervalID
 $car['direction'] = 'south'
 $car['speed'] = 10
 $car['location'] = [0, 0]
