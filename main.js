@@ -27,10 +27,10 @@ const carPrototype = {
       this.location[1] = this.location[1] + this.speed
     }
     else if (this.direction === 'east') {
-      this.location[0] = this.location[0] + this.speed
+      this.location[0] = this.location[0] - this.speed
     }
     else if (this.direction === 'west') {
-      this.location[0] = this.location[0] - this.speed
+      this.location[0] = this.location[0] + this.speed
     }
   }
 }
@@ -65,5 +65,17 @@ document.body.onkeyup = (event) => {
   }
   else if (event.code === 'Digit0') {
     clearInterval(intervalID)
+  }
+  else if (event.code === 'ArrowUp') {
+    $car.turn('north')
+  }
+  else if (event.code === 'ArrowDown') {
+    $car.turn('south')
+  }
+  else if (event.code === 'ArrowLeft') {
+    $car.turn('east')
+  }
+  else if (event.code === 'ArrowRight') {
+    $car.turn('west')
   }
 }
