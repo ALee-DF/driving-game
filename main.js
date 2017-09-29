@@ -67,7 +67,6 @@ document.body.onkeydown = event => {
   else if (event.code === 'KeyZ') {
     clearInterval(intervalID[intervalID.length - 1])
     intervalID.pop()
-    console.log(intervalID)
   }
 }
 
