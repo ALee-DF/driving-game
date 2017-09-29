@@ -1,0 +1,19 @@
+body {
+  padding: 0;
+  margin: 0;
+}
+
+#boundary {
+  position: absolute;
+  left: 50px;
+  top: 50px;
+  width: 800px;
+  height: 800px;
+  background-color: grey;
+}
+
+#car {
+  position: absolute;
+  width: 50px;
+  height: 100px;
+}
