@@ -27,10 +27,10 @@ const carPrototype = {
       this.location[1] = this.location[1] + this.speed
     }
     else if (this.direction === 'east') {
-      this.location[0] = this.location[0] - this.speed
+      this.location[0] = this.location[0] + this.speed
     }
     else if (this.direction === 'west') {
-      this.location[0] = this.location[0] + this.speed
+      this.location[0] = this.location[0] - this.speed
     }
   }
 }
